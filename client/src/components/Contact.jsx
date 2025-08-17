@@ -34,7 +34,7 @@ const Contact = () => {
     setSubmitStatus(null)
 
     try {
-      const response = await axios.post('/api/review', formData)
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/review`, formData)
       setSubmitStatus({ type: 'success', message: 'Review submitted successfully! Thank you for your feedback.' })
       setFormData({ name: '', email: '', message: '', rating: 5 })
     } catch (error) {
