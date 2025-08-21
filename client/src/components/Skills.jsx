@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaBrain, FaCode, FaDatabase, FaTools, FaChartLine } from 'react-icons/fa'
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Machine Learning & AI",
-      icon: FaBrain,
+      icon: "🧠",
       color: "from-purple-500 to-pink-500",
       skills: [
         { name: "Time Series Analysis", level: 90 },
@@ -18,7 +17,7 @@ const Skills = () => {
     },
     {
       title: "Programming Languages",
-      icon: FaCode,
+      icon: "💻",
       color: "from-blue-500 to-cyan-500",
       skills: [
         { name: "Python", level: 95 },
@@ -30,7 +29,7 @@ const Skills = () => {
     },
     {
       title: "Data & Analytics",
-      icon: FaChartLine,
+      icon: "📊",
       color: "from-green-500 to-emerald-500",
       skills: [
         { name: "Data Analysis", level: 90 },
@@ -42,7 +41,7 @@ const Skills = () => {
     },
     {
       title: "Tools & Frameworks",
-      icon: FaTools,
+      icon: "🔧",
       color: "from-orange-500 to-red-500",
       skills: [
         { name: "TensorFlow/PyTorch", level: 85 },
@@ -54,7 +53,7 @@ const Skills = () => {
     },
     {
       title: "Databases & Cloud",
-      icon: FaDatabase,
+      icon: "🗄️",
       color: "from-indigo-500 to-purple-500",
       skills: [
         { name: "MongoDB", level: 80 },
@@ -105,8 +104,8 @@ const Skills = () => {
               className="card p-6"
             >
               <div className="flex items-center mb-6">
-                <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white mr-4`}>
-                  <category.icon size={24} />
+                <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white mr-4 text-2xl`}>
+                  {category.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
               </div>
@@ -156,7 +155,9 @@ const Skills = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-4xl mb-4">🎓</div>
+                <div className="text-4xl mb-4 text-primary-600">
+                  🎓
+                </div>
                 <h4 className="font-semibold text-gray-900 text-center">{cert}</h4>
               </motion.div>
             ))}
@@ -177,17 +178,23 @@ const Skills = () => {
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl mb-3">🔬</div>
+                <div className="text-3xl mb-3 text-primary-600">
+                  🧠
+                </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Research & Development</h4>
                 <p className="text-gray-600 text-sm">Experience in cutting-edge AI research and development</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl mb-3">🚀</div>
+                <div className="text-3xl mb-3 text-accent-600">
+                  🚀
+                </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Project Management</h4>
                 <p className="text-gray-600 text-sm">Leading teams and managing complex technical projects</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl mb-3">🌐</div>
+                <div className="text-3xl mb-3 text-primary-500">
+                  💡
+                </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Web Development</h4>
                 <p className="text-gray-600 text-sm">Full-stack development with modern technologies</p>
               </div>

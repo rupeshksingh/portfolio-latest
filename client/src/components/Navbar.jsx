@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaBars, FaTimes, FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -80,14 +79,14 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
             >
-              <FaLinkedin size={20} />
+              <span className="text-xl">🔗</span>
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               href="mailto:rupeshkumarsingh908@gmail.com"
               className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
             >
-              <FaEnvelope size={20} />
+              <span className="text-xl">✉️</span>
             </motion.a>
           </div>
 
@@ -98,7 +97,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-primary-600 focus:outline-none focus:text-primary-600"
             >
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isOpen ? <span className="text-2xl">❌</span> : <span className="text-2xl">☰</span>}
             </motion.button>
           </div>
         </div>
@@ -133,14 +132,14 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
                 >
-                  <FaLinkedin size={20} />
+                  <span className="text-xl">🔗</span>
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   href="mailto:rupeshkumarsingh908@gmail.com"
                   className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
                 >
-                  <FaEnvelope size={20} />
+                  <span className="text-xl">✉️</span>
                 </motion.a>
               </div>
             </div>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPhone, FaStar, FaPaperPlane } from 'react-icons/fa'
 import axios from 'axios'
 
 const Contact = () => {
@@ -49,21 +48,21 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: FaEnvelope,
+      icon: "✉️",
       title: "Email",
       value: "rupeshkumarsingh908@gmail.com",
       link: "mailto:rupeshkumarsingh908@gmail.com",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: FaLinkedin,
+      icon: "🔗",
       title: "LinkedIn",
       value: "linkedin.com/in/rupesh-kumar-singh-542040235",
       link: "https://www.linkedin.com/in/rupesh-kumar-singh-542040235",
       color: "from-blue-600 to-blue-700"
     },
     {
-      icon: FaMapMarkerAlt,
+      icon: "📍",
       title: "Location",
       value: "Chandigarh, India",
       link: null,
@@ -114,8 +113,8 @@ const Contact = () => {
                   viewport={{ once: true }}
                   className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300"
                 >
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${info.color} text-white`}>
-                    <info.icon size={20} />
+                  <div className={`p-3 rounded-lg bg-gradient-to-r ${info.color} text-white text-2xl`}>
+                    {info.icon}
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">{info.title}</h4>
@@ -215,7 +214,7 @@ const Contact = () => {
                           : 'text-gray-300'
                       }`}
                     >
-                      <FaStar />
+                      ⭐
                     </motion.button>
                   ))}
                 </div>
@@ -275,7 +274,7 @@ const Contact = () => {
                   </>
                 ) : (
                   <>
-                    <FaPaperPlane />
+                    <span className="text-xl">📤</span>
                     <span>Send Message</span>
                   </>
                 )}

@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa'
 
 const Experience = () => {
   const experiences = [
@@ -256,11 +255,11 @@ const Experience = () => {
                     {/* Details */}
                     <div className="flex items-center text-sm text-gray-600 mb-3 space-x-4">
                       <div className="flex items-center">
-                        <FaCalendarAlt className="mr-2" />
+                        <span className="mr-2">📅</span>
                         {exp.duration}
                       </div>
                       <div className="flex items-center">
-                        <FaMapMarkerAlt className="mr-2" />
+                        <span className="mr-2">📍</span>
                         {exp.location}
                       </div>
                     </div>

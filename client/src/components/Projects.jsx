@@ -1,90 +1,39 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt, FaCode, FaBrain, FaDatabase, FaTools } from 'react-icons/fa'
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   const projects = [
     {
-      title: "LLM Chat Model Development",
-      description: "Developed uncensored chat models using advanced techniques like SFT, PEFT, LORA, and ORPO. Created AI agents for chatbot interactions with environment control capabilities.",
+      id: 1,
+      title: "AI-Powered Chatbot",
+      description: "Developed an intelligent chatbot using natural language processing and machine learning algorithms. The system can understand context, provide accurate responses, and learn from user interactions.",
+      technologies: ["Python", "TensorFlow", "NLTK", "Flask", "React"],
+      category: "AI/ML",
       image: "🤖",
-      category: "AI/ML",
-      technologies: ["Python", "PyTorch", "Transformers", "SFT", "PEFT", "LORA", "ORPO"],
-      github: "#",
-      live: "#",
-      featured: true
+      github: "https://github.com/rupesh-kumar-singh",
+      live: "https://example.com"
     },
     {
-      title: "Manufacturing Predictive Maintenance",
-      description: "Implemented ML algorithms for predictive maintenance in manufacturing processes. Built automated systems for equipment monitoring and failure prediction.",
-      image: "🏭",
-      category: "AI/ML",
-      technologies: ["Python", "Machine Learning", "Predictive Analytics", "Manufacturing", "IoT"],
-      github: "#",
-      live: "#",
-      featured: true
-    },
-    {
-      title: "Tender Automation System",
-      description: "Developed AI-powered tender automation system using modern AI frameworks. Streamlined tender processes and improved efficiency through intelligent automation.",
-      image: "📋",
-      category: "AI/ML",
-      technologies: ["AI", "Automation", "Python", "Machine Learning", "Process Optimization"],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "Posture Detection AI",
-      description: "Built effective AI algorithms to detect correct posture during exercise. Integrated computer vision with fitness applications for real-time form correction.",
+      id: 2,
+      title: "Fitness Tracking App",
+      description: "Built a comprehensive fitness tracking application that monitors workouts, tracks nutrition, and provides personalized recommendations based on user goals and progress.",
+      technologies: ["React Native", "Node.js", "MongoDB", "Express", "Chart.js"],
+      category: "Mobile App",
       image: "💪",
-      category: "Computer Vision",
-      technologies: ["Computer Vision", "AI", "Python", "OpenCV", "Fitness", "Real-time"],
-      github: "#",
-      live: "#",
-      featured: false
+      github: "https://github.com/rupesh-kumar-singh",
+      live: "https://example.com"
     },
     {
-      title: "RAG Pipeline Development",
-      description: "Built Retrieval-Augmented Generation pipelines for custom data sources. Implemented support automation through intelligent chat applications.",
-      image: "🔍",
-      category: "AI/ML",
-      technologies: ["RAG", "LLM", "Python", "Vector Databases", "NLP", "Automation"],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "Data Pipeline Architecture",
-      description: "Designed and implemented efficient data pipelines for multiple data sources. Built ETL processes for data extraction, transformation, and storage optimization.",
-      image: "📊",
-      category: "Data Engineering",
-      technologies: ["Data Engineering", "ETL", "Python", "SQL", "Data Pipelines", "Optimization"],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "Educational Website Development",
-      description: "Built and maintained WordPress website for differently abled students. Implemented accessibility features and educational content management.",
+      id: 3,
+      title: "Student Management System",
+      description: "Created a full-stack student management system for educational institutions. Features include student registration, grade management, attendance tracking, and report generation.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Express", "Bootstrap"],
+      category: "Web App",
       image: "🎓",
-      category: "Web Development",
-      technologies: ["WordPress", "Web Development", "Accessibility", "Education", "CMS"],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "AI Research Platform",
-      description: "Led development of AI research platform at IIT Kharagpur. Organized workshops and managed research initiatives in artificial intelligence.",
-      image: "🧠",
-      category: "Research",
-      technologies: ["AI Research", "Platform Development", "Workshop Management", "Team Leadership"],
-      github: "#",
-      live: "#",
-      featured: false
+      github: "https://github.com/rupesh-kumar-singh",
+      live: "https://example.com"
     }
   ]
 
@@ -96,13 +45,13 @@ const Projects = () => {
 
   const getCategoryIcon = (category) => {
     const icons = {
-      'AI/ML': FaBrain,
-      'Computer Vision': FaCode,
-      'Data Engineering': FaDatabase,
-      'Web Development': FaCode,
-      'Research': FaBrain
+      'AI/ML': "🤖",
+      'Computer Vision': "👁️",
+      'Data Engineering': "📊",
+      'Web Development': "🌐",
+      'Research': "🔬"
     }
-    return icons[category] || FaTools
+    return icons[category] || "💻"
   }
 
   const getCategoryColor = (category) => {
@@ -196,22 +145,22 @@ const Projects = () => {
                         href={project.github}
                         className="p-2 bg-gray-100 hover:bg-primary-100 text-gray-600 hover:text-primary-600 rounded-lg transition-colors duration-300"
                       >
-                        <FaGithub size={20} />
+                        📁
                       </motion.a>
                       <motion.a
                         whileHover={{ scale: 1.1, y: -2 }}
                         href={project.live}
                         className="p-2 bg-gray-100 hover:bg-primary-100 text-gray-600 hover:text-primary-600 rounded-lg transition-colors duration-300"
                       >
-                        <FaExternalLinkAlt size={20} />
+                        🔗
                       </motion.a>
                     </div>
                   </div>
 
                   {/* Category Badge */}
                   <div className="flex items-center mb-4">
-                    <div className={`p-2 rounded-lg bg-gradient-to-r ${getCategoryColor(project.category)} text-white mr-3`}>
-                      <getCategoryIcon category={project.category} size={16} />
+                    <div className={`p-2 rounded-lg bg-gradient-to-r ${getCategoryColor(project.category)} text-white mr-3 text-lg`}>
+                      {getCategoryIcon(project.category)}
                     </div>
                     <span className="text-sm font-medium text-primary-600">{project.category}</span>
                   </div>
@@ -309,16 +258,14 @@ const Projects = () => {
                       href={project.github}
                       className="flex-1 text-center py-2 bg-gray-100 hover:bg-primary-100 text-gray-600 hover:text-primary-600 rounded-lg transition-colors duration-300 text-sm font-medium"
                     >
-                      <FaGithub className="inline mr-1" />
-                      Code
+                      📁 Code
                     </motion.a>
                     <motion.a
                       whileHover={{ scale: 1.1 }}
                       href={project.live}
                       className="flex-1 text-center py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-300 text-sm font-medium"
                     >
-                      <FaExternalLinkAlt className="inline mr-1" />
-                      Live
+                      🔗 Live
                     </motion.a>
                   </div>
                 </motion.div>

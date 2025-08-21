@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaArrowDown, FaLinkedin, FaEnvelope, FaGithub } from 'react-icons/fa'
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -16,7 +15,7 @@ const Hero = () => {
             rotate: 360,
             scale: [1, 1.1, 1],
           }}
-          transition={{
+          transition={{ 
             duration: 20,
             repeat: Infinity,
             ease: "linear"
@@ -46,8 +45,9 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
-            👋 Hello, I'm
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+            <span className="text-primary-600 text-lg">😊</span>
+            Hello, I'm
           </span>
         </motion.div>
 
@@ -89,7 +89,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-14"
         >
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
@@ -103,6 +103,8 @@ const Hero = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             href="mailto:rupeshkumarsingh908@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-secondary"
           >
             Get In Touch
@@ -114,7 +116,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="flex justify-center space-x-6 mb-12"
+          className="flex justify-center space-x-6 mb-8"
         >
           <motion.a
             whileHover={{ scale: 1.2, y: -3 }}
@@ -124,15 +126,17 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
           >
-            <FaLinkedin size={28} />
+            <span className="text-3xl">🔗</span>
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.2, y: -3 }}
             whileTap={{ scale: 0.9 }}
             href="mailto:rupeshkumarsingh908@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
           >
-            <FaEnvelope size={28} />
+            <span className="text-3xl">✉️</span>
           </motion.a>
         </motion.div>
 
@@ -141,15 +145,15 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 px-8"
         >
           <motion.button
             onClick={scrollToAbout}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ y: [5, 20, 5] }}
+            transition={{ duration: 3, repeat: Infinity }}
             className="text-gray-400 hover:text-primary-600 transition-colors duration-300"
           >
-            <FaArrowDown size={24} />
+            <span className="text-3xl">⬇️</span>
           </motion.button>
         </motion.div>
       </div>
@@ -164,9 +168,9 @@ const Hero = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-32 left-10 text-6xl opacity-20"
+        className="absolute top-32 left-10 text-primary-600 opacity-30"
       >
-        🤖
+        <span className="text-5xl">🤖</span>
       </motion.div>
       <motion.div
         animate={{
@@ -177,9 +181,9 @@ const Hero = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-44 right-20 text-4xl opacity-20"
+        className="absolute top-44 right-20 text-accent-600 opacity-30"
       >
-        🧠
+        <span className="text-4xl">🧠</span>
       </motion.div>
       <motion.div
         animate={{
@@ -190,9 +194,9 @@ const Hero = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-32 left-20 text-5xl opacity-20"
+        className="absolute bottom-32 left-20 text-primary-500 opacity-30"
       >
-        💻
+        <span className="text-4xl">💻</span>
       </motion.div>
     </section>
   )

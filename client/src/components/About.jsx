@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaAward, FaMapMarkerAlt, FaEnvelope, FaLinkedin } from 'react-icons/fa'
 
 const About = () => {
   const achievements = [
@@ -67,11 +66,11 @@ const About = () => {
             {/* Contact Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <FaMapMarkerAlt className="text-primary-600" size={20} />
+                <span className="text-primary-600 text-xl">📍</span>
                 <span className="text-gray-700">Chandigarh, India</span>
               </div>
               <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-primary-600" size={20} />
+                <span className="text-primary-600 text-xl">✉️</span>
                 <a 
                   href="mailto:rupeshkumarsingh908@gmail.com"
                   className="text-gray-700 hover:text-primary-600 transition-colors duration-300"
@@ -80,7 +79,7 @@ const About = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <FaLinkedin className="text-primary-600" size={20} />
+                <span className="text-primary-600 text-xl">🔗</span>
                 <a 
                   href="https://www.linkedin.com/in/rupesh-kumar-singh-542040235"
                   target="_blank"
@@ -104,7 +103,7 @@ const About = () => {
             {/* Achievements */}
             <div>
               <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <FaAward className="text-primary-600 mr-2" />
+                <span className="text-primary-600 mr-2 text-xl">🏅</span>
                 Key Achievements
               </h4>
               <div className="grid gap-4">
@@ -130,7 +129,7 @@ const About = () => {
             {/* Education */}
             <div>
               <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <FaGraduationCap className="text-primary-600 mr-2" />
+                <span className="text-primary-600 mr-2 text-xl">🎓</span>
                 Education
               </h4>
               <div className="space-y-4">

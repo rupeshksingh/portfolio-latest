@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaLinkedin, FaEnvelope, FaGithub, FaArrowUp, FaHeart } from 'react-icons/fa'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,13 +20,13 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      icon: FaLinkedin,
+      icon: "🔗",
       href: 'https://www.linkedin.com/in/rupesh-kumar-singh-542040235',
       color: 'hover:text-blue-600'
     },
     {
       name: 'Email',
-      icon: FaEnvelope,
+      icon: "✉️",
       href: 'mailto:rupeshkumarsingh908@gmail.com',
       color: 'hover:text-red-600'
     }
@@ -69,7 +68,7 @@ const Footer = () => {
                     className={`p-3 bg-gray-800 rounded-lg text-gray-300 transition-all duration-300 ${social.color}`}
                     aria-label={social.name}
                   >
-                    <social.icon size={20} />
+                    <span className="text-xl">{social.icon}</span>
                   </motion.a>
                 ))}
               </div>
@@ -109,7 +108,7 @@ const Footer = () => {
               <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <FaEnvelope className="text-primary-400" size={16} />
+                  <span className="text-primary-400 text-lg">✉️</span>
                   <a 
                     href="mailto:rupeshkumarsingh908@gmail.com"
                     className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
@@ -118,7 +117,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaLinkedin className="text-primary-400" size={16} />
+                  <span className="text-primary-400 text-lg">🔗</span>
                   <a 
                     href="https://www.linkedin.com/in/rupesh-kumar-singh-542040235"
                     target="_blank"
@@ -146,7 +145,7 @@ const Footer = () => {
                 className="text-gray-400 text-sm text-center md:text-left"
               >
                 © {currentYear} Rupesh Kumar Singh. All rights reserved. Made with{' '}
-                <FaHeart className="inline text-red-500 mx-1" />
+                <span className="inline text-red-500 mx-1">❤️</span>
                 and modern web technologies.
               </motion.div>
 
@@ -162,7 +161,7 @@ const Footer = () => {
                 className="p-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 aria-label="Back to top"
               >
-                <FaArrowUp size={16} />
+                🤖
               </motion.button>
             </div>
           </div>
